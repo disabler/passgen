@@ -4,6 +4,7 @@ Simple Password Generator
 Required:
 * Python 2.7
 * PyQt4
+* py2exe (for build under Windows)
 
 ------
 
