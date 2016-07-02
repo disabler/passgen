@@ -1,6 +1,8 @@
 Simple Password Generator
 ======
 
+![PassGen](https://raw.githubusercontent.com/disabler/passgen/master/screenshots/passgen.png)
+
 Required:
 * Python 2.7
 * PyQt4
