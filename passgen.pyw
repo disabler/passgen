@@ -134,16 +134,16 @@ MAX_MEDIUM_SIZE = 32
 MIN_STRONG_SIZE = 6
 MAX_STRONG_SIZE = 32
 
-PASSWD_STYLE = 'font-size: 12pt; font-family: Courier; height: 26px;'
-PASSWDLEN_STYLE = 'font-size: 12pt; font-family: Courier; height: 26px; width: 100%;'
+PASSWD_STYLE      = 'font-size: 12pt; font-family: Courier; height: 26px;'
+PASSWDLEN_STYLE   = 'font-size: 12pt; font-family: Courier; height: 26px; width: 100%;'
 EXIT_BUTTON_STYLE = 'font-size: 12pt; font-family: Courier; height: 26px;'
 
 SIMPLE_SHORTCUT = 'Ctrl+1'
 MEDIUM_SHORTCUT = 'Ctrl+2'
 STRONG_SHORTCUT = 'Ctrl+3'
-HELP_SHORTCUT = 'Ctrl+H'
-ABOUT_SHORTCUT = 'Ctrl+I'
-EXIT_SHORTCUT = 'Ctrl+Q'
+HELP_SHORTCUT   = 'Ctrl+H'
+ABOUT_SHORTCUT  = 'Ctrl+I'
+EXIT_SHORTCUT   = 'Ctrl+Q'
 
 WINDOWS_TITLE = 'Password Generator'
 
