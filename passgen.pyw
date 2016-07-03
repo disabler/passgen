@@ -105,7 +105,7 @@ e9zFSCV4JOPvAjaL55HUOv4FZUe15r2hHW9k7HbAegN3EOfVpE95X+VORTFfg/9tHe3pb9roCX4Dn/HR
 +gZ4qUytWcGbyl/PnND7Sfm6SflTO4fvyhdergjssP7Ve7L14hYO581N2tzen6ZssUnt3fQ/tpoFj/4G
 ObPANtnn0J8AAAAASUVORK5CYII='''
 
-about = '''
+about_icon = '''
 iVBORw0KGgoAAAANSUhEUgAAABUAAAAYCAYAAAAVibZIAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN
 1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGMSURBVDiNtdU7
 a1RREMDx34hCggo+mkAghUQI2BgRLQRFm1jFBRuDYGXjB5DoF7GwUjsRQbEIgpUgWEQsbERwg2ARRSzU
@@ -116,7 +116,7 @@ Wqc5S3iFa5jNzP0690Rfqa30Ak7oHOGzmfm9K/ZrELTWqJNlXOsBbktq0C9lPNXtjIg5XC3mwWGhD/AT
 ixHxNCKuR8QtrONAyTlajnCj1DZ/C1+74lu4h924W3y3mzZ/FVoS9+I0jmGqJzaDhSZo381fmvS8EtvE
 ZlNsYvdpW+c5uRQRU2OwlsvYZgIPHxN4ov8C9W0iWxiu0LkAAAAASUVORK5CYII='''
 
-info = '''
+info_icon = '''
 iVBORw0KGgoAAAANSUhEUgAAABUAAAAYCAYAAAAVibZIAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN
 1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADoSURBVDiN7dU/
 SkNBEMfxzwQLFb2AIIitvfaCbUippTewEKNHsrP2AOIdxCeWllqJBMfCFR7C821M0mXgxzLszHdn2T8D
@@ -162,25 +162,25 @@ help_text = '''<hr />
 about_text = '''<hr />
 <table><tbody>
 <tr><td>nick</td>
-	<td>...</td>
-	<td align="right"><a style="font-weight:bold;text-decoration:none;color:#333;" 
-		href="http://dsy.name">diSabler</a></td></tr>
+  <td>...</td>
+  <td align="right"><a style="font-weight:bold;text-decoration:none;color:#333;"
+      href="http://dsy.name">diSabler</a></td></tr>
 <tr><td>name</td>
-	<td>...</td>
-	<td align="right"><a style="font-weight:bold;text-decoration:none;color:#333;" 
-		href="http://dsy.name">Andy P. Gorelow</a></td></tr>
+  <td>...</td>
+  <td align="right"><a style="font-weight:bold;text-decoration:none;color:#333;"
+      href="http://dsy.name">Andy P. Gorelow</a></td></tr>
 <tr><td>e-mail</td>
-	<td>...</td>
-	<td align="right"><a style="font-weight:bold;text-decoration:none;color:#333;" 
-		href="mailto:dsy@dsy.name">dsy@dsy.name</a></td></tr>
+  <td>...</td>
+  <td align="right"><a style="font-weight:bold;text-decoration:none;color:#333;"
+      href="mailto:dsy@dsy.name">dsy@dsy.name</a></td></tr>
 <tr><td>telegram</td>
-	<td>...</td>
-	<td align="right"><a style="font-weight:bold;text-decoration:none;color:#333;" 
-		href="http://telegram.me/disabler">@disabler</a></td></tr>
+  <td>...</td>
+  <td align="right"><a style="font-weight:bold;text-decoration:none;color:#333;"
+      href="http://telegram.me/disabler">@disabler</a></td></tr>
 <tr><td>paypal</td>
-	<td>...</td>
-	<td align="right"><a style="font-weight:bold;text-decoration:none;color:#333;" 
-		href="https://www.paypal.me/dissy">dissy</a></td></tr>
+  <td>...</td>
+  <td align="right"><a style="font-weight:bold;text-decoration:none;color:#333;"
+      href="https://www.paypal.me/dissy">dissy</a></td></tr>
 </tbody></table>
 <hr />
 <i>&copy; Disabler Production Lab.</i>
@@ -254,7 +254,7 @@ class MainWindow(QtGui.QMainWindow):
 		new_act2.setIconSize(m_ico.rect().size())
 		self.layout_main.addWidget(new_act2,1,3)
 		self.connect(new_act2, QtCore.SIGNAL('clicked()'), self.get_passwd_medium)
-		
+
 		lbl3 = QtGui.QLabel()
 		m_ico = QtGui.QPixmap()
 		m_ico.loadFromData(base64.b64decode(pass_strong))
@@ -281,7 +281,7 @@ class MainWindow(QtGui.QMainWindow):
 		new_act3.setIconSize(m_ico.rect().size())
 		self.layout_main.addWidget(new_act3,2,3)
 		self.connect(new_act3, QtCore.SIGNAL('clicked()'), self.get_passwd_strong)
-		
+
 		m_ico = QtGui.QPixmap()
 		m_ico.loadFromData(base64.b64decode(exit_icon))
 		quit_act = QtGui.QPushButton()
@@ -293,19 +293,19 @@ class MainWindow(QtGui.QMainWindow):
 		exit_menu = QtGui.QAction(QtGui.QIcon(m_ico), 'Quit', self)
 		exit_menu.setShortcut(EXIT_SHORTCUT)
 		self.connect(exit_menu, QtCore.SIGNAL('triggered()'), QtCore.SLOT('close()'))
-		
+
 		m_ico = QtGui.QPixmap()
-		m_ico.loadFromData(base64.b64decode(info))
+		m_ico.loadFromData(base64.b64decode(info_icon))
 		help_menu = QtGui.QAction(QtGui.QIcon(m_ico), 'Help', self)
 		help_menu.setShortcut(HELP_SHORTCUT)
 		self.connect(help_menu, QtCore.SIGNAL('triggered()'), self.help_info)
-		
+
 		m_ico = QtGui.QPixmap()
-		m_ico.loadFromData(base64.b64decode(about))
+		m_ico.loadFromData(base64.b64decode(about_icon))
 		about_menu = QtGui.QAction(QtGui.QIcon(m_ico), 'About me', self)
 		about_menu.setShortcut(ABOUT_SHORTCUT)
 		self.connect(about_menu, QtCore.SIGNAL('triggered()'), self.about_info)
-		
+
 		self.setCentralWidget(self.window)
 
 		self.get_passwd_simple()
@@ -337,13 +337,13 @@ class MainWindow(QtGui.QMainWindow):
 		msgBox.setWindowIcon(Qt.QIcon(m_ico))
 		msgBox.resize(600, 100)
 		msgBox.exec_()
-		
+
 	def help_info(self):
-		self.show_box('Help', help_text, info)	
-		
+		self.show_box('Help', help_text, info_icon)
+
 	def about_info(self):
-		self.show_box('About me', about_text, about)
-		
+		self.show_box('About me', about_text, about_icon)
+
 	def get_passwd_simple(self):
 		L1 = ['a','e','i','o','u']
 		L2 = [chr(t) for t in range(ord('a'),ord('z')+1) if chr(t) not in L1]
@@ -353,7 +353,7 @@ class MainWindow(QtGui.QMainWindow):
 		else: return
 		if LEN < MIN_EASY_SIZE: return
 		BEG = random.randint(0,1)
-		
+
 		for t in xrange(0,LEN):
 			if t % 2 == BEG:
 				LIT = random.choice(L2)
@@ -364,9 +364,7 @@ class MainWindow(QtGui.QMainWindow):
 				if LEN <= 10:
 					L1.remove(LIT)
 			PASS += LIT
-		
-		# PASS = PASS[0].upper() + PASS[1:-1] + PASS[-1:].upper()
-		
+
 		self.clipboard.setText(PASS)
 		self.textPasswd1.setText(PASS)
 
@@ -391,7 +389,7 @@ class MainWindow(QtGui.QMainWindow):
 		REZ = ''
 		while PRE:
 			REZ += PRE.pop(random.choice(xrange(0,len(PRE))))
-		
+
 		self.clipboard.setText(REZ)
 		self.textPasswd2.setText(REZ)
 
@@ -399,7 +397,7 @@ class MainWindow(QtGui.QMainWindow):
 		RND1 = [chr(t) for t in range(ord('a'),ord('z')+1) if chr(t) not in 'ilo']
 		RND2 = [chr(t) for t in range(ord('A'),ord('Z')+1) if chr(t) not in 'ILO']
 		RND3 = [chr(t) for t in range(ord('2'),ord('9')+1)]
-		RND4 = list('!@#$%^&*')
+		RND4 = list('!@$%^&*')
 
 		T = self.textPasswd3Len.text()
 		if T: LEN = int(T)
