@@ -15,11 +15,11 @@ VER = file(VER_FILE).read().strip()
 setup(
 	# Опции сборки.
 	# includes - подключаемые библиотеки
-	#            для PyQt4 обязательно надо включать в сборку библиотеку sip
+	#			 для PyQt4 обязательно надо включать в сборку библиотеку sip
 	# bundle_files - собрать все библиотеки в один zip файл
 	# compressed - сжать готовый файл
-    options = {'py2exe': {"includes":["sip"], 'bundle_files': 1, 'compressed': True}},
-    # None - включить library.zip в .exe файл
+	options = {'py2exe': {"includes":["sip"], 'bundle_files': 1, 'compressed': True}},
+	# None - включить library.zip в .exe файл
 	zipfile = None,
 	# Версия .exe файла
 	version = VER,
@@ -27,18 +27,18 @@ setup(
 	name = 'PassGen2',
 	# Описание
 	description = 'Password Generator',
-    windows = [{
+	windows = [{
 			# Название скрипта для компиляции
-            "script":"PassGen.pyw",
+			"script":"PassGen.pyw",
 			# Пакет иконок приложения
-            "icon_resources": [(1, "icons/PassGen.ico")],
+			"icon_resources": [(1, "icons/PassGen.ico")],
 			# Исходное имя файла
-            "dest_base":"PassGen2",
+			"dest_base":"PassGen2",
 			# Копирайты
 			"copyright":'Copyright (C) diSabler <dsy@dsy.name>',
 			# Название компании производителя
 			"company_name": 'Disabler Production Lab.'
-            }],
+			}],
 )
 
 # The end is near!
