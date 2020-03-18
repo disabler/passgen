@@ -281,6 +281,26 @@ class MainWindow(QtGui.QMainWindow):
 		new_act3.setIconSize(m_ico.rect().size())
 		self.layout_main.addWidget(new_act3,2,3)
 		self.connect(new_act3, QtCore.SIGNAL('clicked()'), self.get_passwd_strong)
+		
+		lbl4 = QtGui.QLabel()
+		m_ico = QtGui.QPixmap()
+		m_ico.loadFromData(base64.b64decode(refresh_icon))
+		lbl4.setPixmap(QtGui.QPixmap(m_ico))
+		self.textPasswd4 = Qt.QLineEdit()
+		self.textPasswd4.setStyleSheet(PASSWD_STYLE)
+		self.get_passwd_turn()
+		self.layout_main.addWidget(lbl4,3,0)
+		self.layout_main.addWidget(self.textPasswd4,3,1)
+		new_menu4 = QtGui.QAction(QtGui.QIcon(m_ico), 'Update `turn` password', self)
+		new_menu4.setShortcut(STRONG_SHORTCUT)
+		self.connect(new_menu4, QtCore.SIGNAL('triggered()'), self.get_passwd_turn)
+		m_ico = QtGui.QPixmap()
+		m_ico.loadFromData(base64.b64decode(refresh_icon))
+		new_act4 = QtGui.QPushButton()
+		new_act4.setIcon(QtGui.QIcon(m_ico))
+		new_act4.setIconSize(m_ico.rect().size())
+		self.layout_main.addWidget(new_act4,3,3)
+		self.connect(new_act4, QtCore.SIGNAL('clicked()'), self.get_passwd_turn)
 
 		m_ico = QtGui.QPixmap()
 		m_ico.loadFromData(base64.b64decode(exit_icon))
@@ -288,7 +308,7 @@ class MainWindow(QtGui.QMainWindow):
 		quit_act.setIcon(QtGui.QIcon(m_ico))
 		quit_act.setIconSize(m_ico.rect().size())
 		quit_act.setStyleSheet(EXIT_BUTTON_STYLE)
-		self.layout_main.addWidget(quit_act,3,0,1,4)
+		self.layout_main.addWidget(quit_act,4,0,1,4)
 		self.connect(quit_act, QtCore.SIGNAL('clicked()'), QtGui.qApp, QtCore.SLOT('quit()'))
 		exit_menu = QtGui.QAction(QtGui.QIcon(m_ico), 'Quit', self)
 		exit_menu.setShortcut(EXIT_SHORTCUT)
@@ -316,6 +336,7 @@ class MainWindow(QtGui.QMainWindow):
 		menu_f.addAction(new_menu1)
 		menu_f.addAction(new_menu2)
 		menu_f.addAction(new_menu3)
+		menu_f.addAction(new_menu4)
 		menu_f.addSeparator()
 		menu_f.addAction(exit_menu)
 
@@ -418,6 +439,22 @@ class MainWindow(QtGui.QMainWindow):
 
 		self.clipboard.setText(REZ)
 		self.textPasswd3.setText(REZ)
+
+	def get_passwd_turn(self):
+	
+		T1 = u'`1234567890-=qwertyuiop[]\asdfghjkl;\'zxcvbnm,./~!@#$%^&*()_+QWERTYUIOP{}|ASDFGHJKL:"ZXCVBNM<>?'
+		T2 = u'ё1234567890-=йцукенгшщзхъ\\фывапролджэячсмитьбю.Ё!"№;%:?*()_+ЙЦУКЕНГШЩЗХЪ/ФЫВАПРОЛДЖЭЯЧСМИТЬБЮ,'
+		TURN1 = T1 + T2
+		TURN2 = T2 + T1
+		print len(T1)
+		print len(T2)
+		TEXT = unicode(self.textPasswd4.text())
+		REZ = ''.join([TURN1[TURN2.find(x)] if x in TURN2 else x for x in TEXT])
+
+		
+		
+		self.clipboard.setText(REZ)
+		self.textPasswd4.setText(REZ)
 
 if __name__ == "__main__" :
 	app = QtGui.QApplication(sys.argv)
